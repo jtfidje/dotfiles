@@ -13,6 +13,8 @@
       inputs.home-manager.nixosModules.default
     ];
 
+  networking.hostName = "mars"; # Define your hostname.
+
   hardware.nvidia = {
     open = true;
     powerManagement.finegrained = false; # Not applicable - Desktop

@@ -13,6 +13,8 @@
       inputs.home-manager.nixosModules.default
     ];
 
+  networking.hostName = "gastly"; # Define your hostname.
+
   boot.initrd.availableKernelModules = [ "xhci_pci" "ahci" "nvme" "usb_storage" "sd_mod" "rtsx_pci_sdmmc" ];
   boot.kernelModules = [ "kvm-intel" "i915" ];
   boot.kernelParams = [

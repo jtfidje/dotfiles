@@ -48,8 +48,12 @@
       "90:class_g = 'Alacritty' && focused"
       "80:class_g = 'Alacritty' && !focused"
     ];
-    settings.corner-radius = 5;
     shadow = true;
     shadowOpacity = 0.75;
+    settings = {
+      corner-radius = 5;
+      unredirIfPossible = false;
+      vsync = true;
+    };
   };
 }

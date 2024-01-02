@@ -16,12 +16,21 @@
       pkgs = nixpkgs.legacyPackages.${system};
     in
     {
-      nixosConfigurations.xps = nixpkgs.lib.nixosSystem {
+      nixosConfigurations = {
+        xps = nixpkgs.lib.nixosSystem {
           specialArgs = {inherit inputs;};
           modules = [
             ./hosts/dell-xps-9570/configuration.nix
             inputs.home-manager.nixosModules.default
           ];
         };
+        workstation = nixpkgs.lib.nixosSystem {
+          specialArgs = {inherit inputs;};
+          modules = [
+            ./hosts/workstation/configuration.nix
+            inputs.home-manager.nixosModules.default
+          ];
+        };       
+      };
     };
 }

@@ -51,7 +51,7 @@
       configFile = ../../configurations/i3;
       extraPackages = [
           pkgs.dmenu
-          pkgs.i3status
+          pkgs.i3blocks
       ];
     };
 
@@ -96,11 +96,20 @@
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
       bitwarden
-      spotify
-      flameshot
       discord
+      flameshot
+      slack
+      spotify
     ];
   };
+
+  fonts.packages = with pkgs; [
+    font-awesome
+    source-code-pro
+    noto-fonts
+    noto-fonts-cjk
+    noto-fonts-emoji
+  ];
   
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
@@ -111,9 +120,11 @@
     btop
     feh
     firefox
+    lxappearance
     pavucontrol
     pulseaudio  # Installs pulse tools, but does not enable it as a backend
-    python3
+    python312
+    rofi
     vim
     wget
   ];

@@ -1,6 +1,11 @@
 { config, pkgs, ... }:
 
 {
+  # Set some boot-params
+  boot.kernelParams = [
+    "nvidia-drm.modeset=1"
+  ];
+
   # Load nvidia driver for Xorg and Wayland
   services.xserver.videoDrivers = [ "nvidia" ];
 

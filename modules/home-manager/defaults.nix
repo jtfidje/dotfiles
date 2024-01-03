@@ -25,7 +25,6 @@
     enable = true;
     extensions = with pkgs.vscode-extensions; [
       ms-python.python
-      charliermarsh.ruff
       mhutchie.git-graph
       bbenoist.nix
     ] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
@@ -34,6 +33,12 @@
         publisher = "akamud";
         version = "2.3.0";
         sha256 = "1km3hznw8k0jk9sp3r81c89fxa311lc6gw20fqikd899pvhayqgh";
+      }
+      {
+        name = "ruff";
+        publisher = "charliermarsh";
+        version = "2023.60.0";
+        sha256 = "qgwud2gzHLHID45VxDlngFMoks5O3pTHQe+Q7bdf8+I=";
       }
     ];
   };

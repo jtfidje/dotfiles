@@ -43,12 +43,20 @@
     # Configure keymap in X11
     layout = "no";
     xkbVariant = "";
-
     libinput.enable = true;
 
     # Configure i3 with XFCE on top
+    windowManager.i3 = {
+      enable = true;
+      configFile = ../../configurations/i3;
+      extraPackages = [
+          pkgs.dmenu
+          pkgs.i3status
+      ];
+    };
+
     desktopManager = {
-      xterm.enable = true;
+      xterm.enable = false;
       xfce = {
         enable = true;
         noDesktop = true;
@@ -56,14 +64,11 @@
         enableScreensaver = false;
       };
     };
-    windowManager.i3 = {
-      enable = true;
-      configFile = ../../configurations/i3;
-      extraPackages = [
-          pkgs.dmenu
-      ];
+
+    displayManager = {
+      lightdm.enable =  true;
+      defaultSession = "xfce+i3";
     };
-    displayManager.defaultSession = "xfce+i3";
   };
   console.keyMap = "no";
 

@@ -57,8 +57,6 @@
     shadowOpacity = 0.75;
     settings = {
       corner-radius = 5;
-      unredirIfPossible = false;
-      vsync = true;
     };
   };
 }

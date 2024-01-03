@@ -8,8 +8,9 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      ./intel-gpu.nix
       ../../modules/nixos/configuration.nix
-      ../../modules/nixos/nvidia.nix
+      ../../modules/nixos/nvidia-disable.nix
       inputs.home-manager.nixosModules.default
     ];
 

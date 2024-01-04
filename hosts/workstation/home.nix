@@ -94,7 +94,7 @@
   # Configure Alacritty
   programs.alacritty = {
     settings = {
-      colors.primary.background = "#0D1313";
+      colors.primary.background = "#111111";
     };
   };
 }

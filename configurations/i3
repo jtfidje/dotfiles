@@ -192,11 +192,18 @@ bindsym $mod+r mode "resize"
 bar {
     i3bar_command i3bar --transparency
 
-    position top
+    position bottom
     status_command i3blocks
 
     colors {
-      background #000000BC
+      background #0D1313BC
+
+      # class            border  backgr. text
+      focused_workspace  #607564 #3B524A #ffffff
+      active_workspace   #333333 #5f676a #ffffff
+      inactive_workspace #333333 #222222 #888888
+      urgent_workspace   #2f343a #900000 #ffffff
+      binding_mode       #2f343a #900000 #ffffff
     }
 }
 
@@ -212,3 +219,12 @@ exec_always --no-startup-id feh --bg-scale ~/.background-image
 
 # Screenshot
 bindsym $mod+Shift+f exec --no-startup-id flameshot gui
+
+# class                 border  backgr. text    indicator child_border
+client.focused          #607564 #3B524A #ffffff #7EA47D   #3B524A
+client.focused_inactive #333333 #5f676a #ffffff #484e50   #5f676a
+client.unfocused        #333333 #222222 #888888 #292d2e   #222222
+client.urgent           #2f343a #900000 #ffffff #900000   #900000
+client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
+
+client.background       #ffffff

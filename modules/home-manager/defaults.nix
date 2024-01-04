@@ -54,7 +54,6 @@
 
   services.picom = {
     enable = true;
-    activeOpacity = 1.0;
     backend = "glx";
     fade = true;
     fadeDelta = 5;
@@ -62,8 +61,6 @@
       "90:class_g = 'Alacritty' && focused"
       "80:class_g = 'Alacritty' && !focused"
     ];
-    shadow = true;
-    shadowOpacity = 0.75;
     settings = {
       corner-radius = 5;
     };

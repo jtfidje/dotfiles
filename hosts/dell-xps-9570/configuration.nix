@@ -25,4 +25,8 @@
       "jtfidje" = import ./home.nix;
     };
   };
+
+  environment.systemPackages = with pkgs; [
+    acpi
+  ];
 }

@@ -65,8 +65,9 @@
       };
     };
 
+
     displayManager = {
-      gdm.enable =  true;
+      gdm.enable = true;
       gdm.wayland = false;
       defaultSession = "xfce+i3";
     };
@@ -103,6 +104,7 @@
       bitwarden
       discord
       flameshot
+      obsidian
       slack
       spotify
     ];
@@ -146,4 +148,19 @@
 
   # Enable Flakes
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
+  # Automatic Garbage Collection
+  nix.gc = {
+    automatic = true;
+    dates = "weekly";
+    options = "--delete-older-than 7d";
+  };
+  boot.loader.systemd-boot.configurationLimit = 10;
+
+  # Allow insecure packages:
+  #   - electron-25.9.0
+  #     - obsidian
+  nixpkgs.config.permittedInsecurePackages = [
+    "electron-25.9.0"
+  ];
 }

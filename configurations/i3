@@ -196,7 +196,7 @@ bar {
     status_command i3blocks
 
     colors {
-      background #111111BC
+      background #11111100
 
       # class            border  backgr. text
       focused_workspace  #040404 #2C2C34 #ffffff
@@ -206,6 +206,15 @@ bar {
       binding_mode       #2f343a #900000 #ffffff
     }
 }
+
+#[colors]
+#background = #282A2E
+#background-alt = #373B41
+#foreground = #C5C8C6
+#primary = #F0C674
+#secondary = #8ABEB7
+#alert = #A54242
+# disabled = #707880
 
 # Configure gaps
 gaps inner 8px

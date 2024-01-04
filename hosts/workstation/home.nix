@@ -97,4 +97,16 @@
       colors.primary.background = "#111111";
     };
   };
+
+  # Configure i3blocks
+  xdg.configFile = {
+    "i3blocks-config" = {
+      text = ''
+        [TIME_DATE]
+        command=date +" %a %d %b - %H:%M:%S"
+        interval=1
+      '';
+      target = "./i3blocks/config";
+    };
+  };
 }

@@ -76,4 +76,25 @@
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
+
+  # Configure i3blocks
+  xdg.configFile = {
+    "i3blocks-config" = {
+      text = ''
+        [BATTERY]
+        command=~/.config/i3blocks/battery/battery_info.sh
+        interval=3
+
+        [TIME_DATE]
+        command=date +" %a %d %b - %H:%M:%S"
+        interval=1
+      '';
+      target = "./i3blocks/config";
+    };
+
+    "i3blocks-battery" = {
+      source = ../../configurations/i3blocks/battery/battery_info.sh;
+      target = "./i3blocks/battery/battery_info.sh";
+    };
+  };
 }

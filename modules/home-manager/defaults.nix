@@ -43,6 +43,15 @@
     ];
   };
 
+  programs.rofi = {
+    enable = true;
+    extraConfig = {
+      modi = "drun";
+      show-icons = true;
+    };
+    theme = ../../configurations/rofi/theme.rasi;
+  };
+
   services.picom = {
     enable = true;
     activeOpacity = 1.0;

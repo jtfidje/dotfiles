@@ -124,7 +124,6 @@
     pavucontrol
     pulseaudio  # Installs pulse tools, but does not enable it as a backend
     python312
-    rofi
     vim
     wget
   ];

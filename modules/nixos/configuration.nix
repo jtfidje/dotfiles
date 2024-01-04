@@ -76,25 +76,29 @@
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
-  # Enable sound with pipewire.
+  # Enable sound with PulseAudio.
   sound.enable = true;
-  hardware.pulseaudio.enable = false;
+  hardware.pulseaudio.enable = true;
+  hardware.pulseaudio.support32Bit = true;
+  nixpkgs.config.pulseaudio = true;
+
+  # Enable sound with pipewire.
   security.rtkit.enable = true;
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
-    
-    # If you want to use JACK applications, uncomment this
-    #jack.enable = true;
-  };
+  # services.pipewire = {
+  #   enable = true;
+  #   alsa.enable = true;
+  #   alsa.support32Bit = true;
+  #   pulse.enable = true;
+  #   wireplumber.enable = true;
+  #   # If you want to use JACK applications, uncomment this
+  #   jack.enable = true;
+  # };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.jtfidje = {
     isNormalUser = true;
     description = "Jahn Thomas Fidje";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "audio" ];
     packages = with pkgs; [
       bitwarden
       discord

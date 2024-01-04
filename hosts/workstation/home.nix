@@ -76,4 +76,9 @@
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
+  # Download wallpaper
+  home.file.".background-image".source = pkgs.fetchurl {
+    url = "https://uccd7e53115c13be07a08af5c035.previews.dropboxusercontent.com/p/thumb/ACK5HN0lKJK-NAa_lkSwrz--ysMp9AW8cZuDCB4EGZvWnw8PM6bjG-GCjV7-9lqpiEJvaNnwOFnzwQZAQRXuFMeo8jDAQj4JxO5Y5TMgdIotiSeSgI9bTt2haEpWylof25-ljqV2mbu2zXlLl_8vZiO8aL959mznnjavojt7FhbdjtEseiA1LIJEq3y4J_Wdix5q-Rpz5kxKxk-ownG4t-4ywFNSnWzsxElc_m_wvc-EpJwj_pvT-TO_iL3cnqFu3Y5bcF1B1GA0MM-FiVASJb8iujdNFa20FwNyJ9FfrmMH-Hra4UTnBrzkw8szjJQipbkyRTD0-xCDO0AUuzGDWvAgD8evJF98yg2B9xkUx9u3Qfw4DI2HiKkrm41GNdIgdFg/p.jpeg";
+    sha256 = "11si7irrng3ijvvjh4zv888w4fhzg6hqjb7j97lzqq5gd4favla3";
+  };
 }

@@ -66,7 +66,8 @@
     };
 
     displayManager = {
-      lightdm.enable =  true;
+      gdm.enable =  true;
+      gdm.wayland = false;
       defaultSession = "xfce+i3";
     };
   };

@@ -4,6 +4,26 @@
   # Allow un-free packages
   nixpkgs.config.allowUnfree = true;
 
+  # Configure bash
+  programs.bash = 
+    let
+      gitAware = builtins.fetchGit
+        {
+          url = "https://github.com/jimeh/git-aware-prompt";
+          ref = "master";
+          rev = "df8f218d4af51b1fac03f58bf0ddc776466312de";
+        };
+    in
+    {
+      enable = true;
+      bashrcExtra = ''
+        export GITAWAREPROMPT=${gitAware.outPath}
+        source "${gitAware.outPath}/main.sh"
+        export PS1="\[\]\n\[\033[1;32m\][\[\e]0;\u@\h: \w\a\]\u@\h:\w]\[\033[0m\] \[$txtcyn\]\$git_branch\[$txtred\]\$git_dirty\[$txtrst\]\$ "
+      '';
+   };
+
+  # Configure Alacritty
   programs.alacritty = {
     enable = true;
     settings = {
@@ -12,6 +32,7 @@
     };
   };
 
+  # Configure Git
   programs.git = {
     enable = true;
     userEmail = "jtfidje@gmail.com";
@@ -21,6 +42,7 @@
     };
   };
 
+  # Configure VSCode
   programs.vscode = {
     enable = true;
     extensions = with pkgs.vscode-extensions; [
@@ -54,6 +76,7 @@
     };
   };
 
+  # Configure Rofi
   programs.rofi = {
     enable = true;
     extraConfig = {
@@ -63,6 +86,7 @@
     theme = ../../configurations/rofi/theme.rasi;
   };
 
+  # Configure Picom
   services.picom = {
     enable = true;
     fade = true;
@@ -76,6 +100,7 @@
     };
   };
 
+  # Configure i3
   xsession.windowManager.i3 = {
     enable = true;
     config = let

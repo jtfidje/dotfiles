@@ -45,16 +45,6 @@
     xkbVariant = "";
     libinput.enable = true;
 
-    # Configure i3 with XFCE on top
-    windowManager.i3 = {
-      enable = true;
-      configFile = ../../configurations/i3;
-      extraPackages = [
-          pkgs.dmenu
-          pkgs.i3blocks
-      ];
-    };
-
     desktopManager = {
       xterm.enable = false;
       xfce = {
@@ -70,6 +60,12 @@
       gdm.enable = true;
       gdm.wayland = false;
       defaultSession = "xfce+i3";
+    };
+
+    windowManager = {
+      i3 = {
+        enable = true;
+      };
     };
   };
   console.keyMap = "no";
@@ -127,6 +123,7 @@
     btop
     feh
     firefox
+    i3blocks
     lxappearance
     pavucontrol
     pulseaudio  # Installs pulse tools, but does not enable it as a backend

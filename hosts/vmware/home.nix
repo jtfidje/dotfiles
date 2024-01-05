@@ -77,29 +77,30 @@
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
+  # Configure Picom
+
+  # Download wallpaper
+#  home.file.".background-image".source = pkgs.fetchurl {
+#    url = "https://w.wallhaven.cc/full/rr/wallhaven-rrpp6m.png";
+#    sha256 = "11si7irrng3ijvvjh4zv888w4fhzg6hqjb7j97lzqq5gd4favla3";
+#  };
+
+  # Configure Alacritty
+  programs.alacritty = {
+    settings = {
+      colors.primary.background = "#111111";
+    };
+  };
+
   # Configure i3blocks
   xdg.configFile = {
     "i3blocks-config" = {
       text = ''
-        [BATTERY]
-        command=~/.config/i3blocks/battery/battery_info.sh
-        interval=3
-
         [TIME_DATE]
         command=date +" %a %d %b - %H:%M:%S"
         interval=1
       '';
       target = "./i3blocks/config";
     };
-
-    "i3blocks-battery" = {
-      source = ../../configurations/i3blocks/battery/battery_info.sh;
-      target = "./i3blocks/battery/battery_info.sh";
-    };
-  };
-
-  # Configure picom
-  services.picom = {
-    backend = "glx";
   };
 }

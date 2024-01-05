@@ -9,21 +9,17 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       ../../modules/nixos/configuration.nix
-      ../../modules/nixos/nvidia.nix
       inputs.home-manager.nixosModules.default
     ];
 
   # Bootloader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
+  boot.loader.grub.enable = true;
+  boot.loader.grub.device = "/dev/sda";
+  boot.loader.grub.useOSProber = true;
 
-  networking.hostName = "mars"; # Define your hostname.
+  virtualisation.vmware.guest.enable = true;
 
-  hardware.nvidia = {
-    open = true;
-    powerManagement.finegrained = false; # Not applicable - Desktop
-    powerManagement.enable = false;  # Not applicable - Desktop
-  };
+  networking.hostName = "vm"; # Define your hostname.
 
   home-manager = {
     extraSpecialArgs = { inherit inputs; };
@@ -31,9 +27,4 @@
       "jtfidje" = import ./home.nix;
     };
   };
-
-  boot.kernelParams = [ 
-    "pcie_port_pm=off"
-    "pcie_aspm.policy=performance"
-  ];
 }

@@ -65,7 +65,6 @@
 
   services.picom = {
     enable = true;
-    backend = "glx";
     fade = true;
     fadeDelta = 5;
     opacityRules = [

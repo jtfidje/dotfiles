@@ -31,6 +31,13 @@
             inputs.home-manager.nixosModules.default
           ];
         };       
+        vmware = nixpkgs.lib.nixosSystem {
+          specialArgs = {inherit inputs;};
+          modules = [
+            ./hosts/vmware/configuration.nix
+            inputs.home-manager.nixosModules.default
+          ];
+        };       
       };
     };
 }

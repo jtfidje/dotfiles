@@ -14,6 +14,10 @@
       inputs.home-manager.nixosModules.default
     ];
 
+  # Bootloader.
+  boot.loader.systemd-boot.enable = true;
+  boot.loader.efi.canTouchEfiVariables = true;
+
   networking.hostName = "gastly"; # Define your hostname.
 
   users.users.jtfidje.extraGroups = [ "video" ];

@@ -79,6 +79,7 @@
 
   # Configure Picom
   services.picom = {
+    backend = "glx";
     settings = {
       vsync = true;
       unredir-if-possible = false;

@@ -91,7 +91,7 @@
   users.users.jtfidje = {
     isNormalUser = true;
     description = "Jahn Thomas Fidje";
-    extraGroups = [ "networkmanager" "wheel" "audio" ];
+    extraGroups = [ "networkmanager" "wheel" "audio" "docker" ];
     packages = with pkgs; [
       bitwarden
       discord
@@ -127,6 +127,8 @@
     vim
     wget
   ];
+
+  virtualisation.docker.enable = true;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

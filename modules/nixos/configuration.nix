@@ -122,8 +122,10 @@
     i3blocks
     lxappearance
     pavucontrol
+    poetry
     pulseaudio  # Installs pulse tools, but does not enable it as a backend
-    python312
+    pyenv
+    python3
     tmux
     vim
     wget

@@ -154,8 +154,12 @@
             focusedWorkspace = {
               background = "#040404";
               border = "#2C2C34";
-              text = "#ffffff";
+              text = "#C5C8C6";
             };
+          };
+          fonts = {
+            names = [ "DejaVu Sans Mono" ];
+            size = 10.0;
           };
         }
       ];

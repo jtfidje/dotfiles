@@ -86,7 +86,7 @@
         interval=3
 
         [TIME_DATE]
-        command=date +" %a %d %b - %H:%M:%S"
+        command=date +" %a %d %b %H:%M:%S "
         interval=1
       '';
       target = "./i3blocks/config";

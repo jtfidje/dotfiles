@@ -113,6 +113,8 @@
       gaps.inner = 8;
       gaps.outer = 2;
 
+      defaultWorkspace = "workspace number 1";
+
       startup = [
         {
           command = "nm-applet";
@@ -129,7 +131,7 @@
       keybindings = lib.mkOptionDefault {
         "${mod}+Shift+d" = "exec ${pkgs.rofi}/bin/rofi -show run";
         "${mod}+Shift+f" = "exec flameshot gui";
-        "${mod}+Shift+e" = "exec xfce-session-logout";
+        "${mod}+Shift+e" = "exec xfce4-session-logout";
       };
 
       colors = {

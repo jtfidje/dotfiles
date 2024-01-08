@@ -89,7 +89,7 @@
   # Download wallpaper
   home.file.".background-image".source = pkgs.fetchurl {
     url = "https://www.dropbox.com/s/ajiutqejqlkz3g6/shot-23.jpeg?dl=1";
-    sha256 = "11si7irrng3ijvvjh4zv888w4fhzg6hqjb7j97lzqq5gd4favla3";
+    sha256 = "20JVwIyQgbKMW9wy+iBI8CODeFAay4jdQZKdf5mywsQ=";
   };
 
   # Configure Alacritty

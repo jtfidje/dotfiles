@@ -49,8 +49,13 @@
       ms-python.python
       mhutchie.git-graph
       bbenoist.nix
-      pkief.material-icon-theme
     ] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
+      {
+        name = "easy-icons";
+        publisher = "jamesmaj";
+        version = "0.3.1";
+        sha256 = "RKVK9bNbv9gjhbbN4gPWAzysAx8BuY2HD8wfwjloYyY=";
+      }
       {
         name = "vscode-theme-onedark";
         publisher = "akamud";
@@ -67,7 +72,7 @@
     userSettings = {
       "window.menuBarVisibility" = "toggle";
       "workbench.colorTheme" = "Atom One Dark";
-      "workbench.iconTheme" = "material-icon-theme";
+      "workbench.iconTheme" = "easy-icons";
       "[python]" = {
         "editor.rulers" = [88];
         "editor.formatOnSave" = true;

@@ -124,6 +124,7 @@
     pavucontrol
     pulseaudio  # Installs pulse tools, but does not enable it as a backend
     python312
+    tmux
     vim
     wget
   ];

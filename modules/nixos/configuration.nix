@@ -96,7 +96,9 @@
       bitwarden
       discord
       flameshot
+      insync
       obsidian
+      poppler_utils
       slack
       spotify
     ];

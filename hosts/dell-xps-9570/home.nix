@@ -102,4 +102,12 @@
   services.picom = {
     backend = "glx";
   };
+
+  # Configure Alacritty
+  programs.alacritty = {
+    settings = {
+      colors.primary.background = "#111111";
+      font.size = 8;
+    };
+  };
 }

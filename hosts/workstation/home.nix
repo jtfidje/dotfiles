@@ -95,6 +95,7 @@
   # Configure Alacritty
   programs.alacritty = {
     settings = {
+      font.size = 10;
       colors.primary.background = "#111111";
     };
   };

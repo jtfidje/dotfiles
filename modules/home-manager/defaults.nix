@@ -27,7 +27,6 @@
   programs.alacritty = {
     enable = true;
     settings = {
-      font.size = 10;
       selection.save_to_clipboard = true;
     };
   };
